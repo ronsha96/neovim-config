@@ -1,6 +1,5 @@
 local map = vim.keymap.set
 
--- languages
 local lsp = require("lspconfig")
 -- local protocol = require("vim.lsp.protocol")
 
@@ -47,7 +46,6 @@ local on_attach = function(client, bufnr)
 	map("n", "<leader>ca", "<Cmd>Lspsaga code_action<CR>", bufopts)
 end
 
--- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local function organize_imports()
@@ -59,7 +57,7 @@ local function organize_imports()
 	vim.lsp.buf.execute_command(params)
 end
 
--- TypeScript LSP
+-- TypeScript
 lsp.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -76,14 +74,14 @@ lsp.tsserver.setup({
 	},
 })
 
--- CSS LSP
+-- CSS
 lsp.cssls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = { "vscode-css-language-server", "--stdio" },
 })
 
--- Lua lsp
+-- Lua
 lsp.sumneko_lua.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -94,4 +92,10 @@ lsp.sumneko_lua.setup({
 			},
 		},
 	},
+})
+
+-- Python
+lsp.pyright.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
