@@ -49,8 +49,26 @@ map("n", ";g", function()
 	telescope.extensions.frecency.frecency()
 end)
 
+local function get_visual_selection()
+	vim.cmd('noau normal! "vy"')
+	local text = vim.fn.getreg("v")
+	vim.fn.setreg("v", {})
+
+	text = string.gsub(text, "\n", "")
+	if #text > 0 then
+		return text
+	else
+		return ""
+	end
+end
+
 map("n", ";r", function()
 	builtin.live_grep()
+end)
+
+map("v", ";r", function()
+	local selected_text = get_visual_selection()
+	builtin.live_grep({ default_text = selected_text })
 end)
 
 map("n", "\\\\", function()
