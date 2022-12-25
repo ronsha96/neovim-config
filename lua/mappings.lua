@@ -84,3 +84,9 @@ map("n", "<C-S-Up>", "<C-Up>", { silent = true })
 
 map("n", "<leader>e", vim.diagnostic.open_float, opts)
 map("n", "<leader>q", vim.diagnostic.setloclist, opts)
+
+map("n", "<C-D>", "<C-D>zz", opts)
+map("n", "<C-U>", "<C-U>zz", opts)
+
+map("n", "n", "nzzzv", opts)
+map("n", "N", "Nzzzv", opts)
