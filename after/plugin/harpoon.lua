@@ -4,22 +4,11 @@ local ui = require("harpoon.ui")
 local map = vim.keymap.set
 local opts = { noremap = true, silent = false }
 
-map("n", "<leader>a", mark.add_file, opts)
+map("n", "ma", mark.add_file, opts)
+map("n", "mm", ui.toggle_quick_menu, opts)
 
-map("n", "<C-e>", ui.toggle_quick_menu, opts)
-
-map("n", "<leader>m,", function()
-	ui.nav_file(1)
-end, opts)
-
-map("n", "<leader>m.", function()
-	ui.nav_file(2)
-end, opts)
-
-map("n", "<leader>m/", function()
-	ui.nav_file(3)
-end, opts)
-
-map("n", "<leader>mm", function()
-	ui.nav_file(4)
-end, opts)
+for n = 1, 9 do
+	map("n", "m" .. n, function()
+		ui.nav_file(n)
+	end, opts)
+end

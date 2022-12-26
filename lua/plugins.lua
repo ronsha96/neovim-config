@@ -49,6 +49,8 @@ packer.startup(function(use)
 	use("dinhhuy258/git.nvim")
 	use("lewis6991/gitsigns.nvim")
 	use({ "akinsho/git-conflict.nvim", tag = "*" })
+	use("TimUntersberger/neogit")
+	use("sindrets/diffview.nvim")
 
 	use({
 		"nvim-treesitter/nvim-treesitter",

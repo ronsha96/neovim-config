@@ -105,6 +105,11 @@ _G.packer_plugins = {
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/fidget.nvim",
@@ -168,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  neogit = {
+    loaded = true,
+    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/TimUntersberger/neogit"
   },
   ["neovim-ayu"] = {
     loaded = true,
