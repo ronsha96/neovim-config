@@ -35,6 +35,8 @@ require("git").setup({
 -- Git conflict
 require("git-conflict").setup()
 
+map("n", "<leader>gl", ":GitConflictListQf")
+
 -- Git signs
 local gitsigns = require("gitsigns")
 
@@ -52,6 +54,7 @@ local neogit = require("neogit")
 neogit.setup({
 	kind = "tab",
 	integrations = { diffview = true },
+	disable_insert_on_commit = false,
 })
 
 map("n", "<leader>gs", function()
