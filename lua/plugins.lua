@@ -91,6 +91,7 @@ packer.startup(function(use)
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	})
+	use("ThePrimeagen/harpoon")
 end)
 
 -- auto compile plugins

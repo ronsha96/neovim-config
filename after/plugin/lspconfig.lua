@@ -99,3 +99,13 @@ lsp.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+-- lsp.jedi_language_server.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
+
+-- lsp.pylsp.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })

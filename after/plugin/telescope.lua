@@ -6,7 +6,7 @@ local builtin = require("telescope.builtin")
 
 telescope.setup({
 	defaults = {
-		path_display = { "smart" },
+		path_display = { "truncate" },
 		file_ignore_patterns = {
 			"node_modules",
 			"build",
@@ -62,11 +62,7 @@ local function get_visual_selection()
 	end
 end
 
-map("n", ";r", function()
-	builtin.live_grep()
-end)
-
-map("v", ";r", function()
+map({ "n", "v" }, ";r", function()
 	local selected_text = get_visual_selection()
 	builtin.live_grep({ default_text = selected_text })
 end)
