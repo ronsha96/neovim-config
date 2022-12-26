@@ -4,31 +4,46 @@ local global = vim.g
 global.loaded_netrw = 1
 global.loaded_netrwPlugin = 1
 
-vim.o.termguicolors = true
-
 local opt = vim.opt
 
 opt.completeopt = "menuone,noinsert,noselect"
 opt.backspace = "indent,start,eol"
 opt.clipboard = "unnamedplus"
+
 opt.autoread = true
+opt.autoindent = true
+
 opt.number = true
 opt.relativenumber = true
+
 opt.incsearch = true
-opt.hlsearch = true
-opt.hidden = true
-opt.ignorecase = true
-opt.joinspaces = true
-opt.scrolloff = 4
-opt.sidescrolloff = 8
-opt.shiftround = true
-opt.shiftwidth = 4
+opt.hlsearch = false
+
+opt.termguicolors = true
+
 opt.smartcase = true
 opt.smartindent = true
 opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftround = true
+opt.shiftwidth = 4
 opt.expandtab = false
-opt.autoindent = true
+
+opt.scrolloff = 8
+opt.sidescrolloff = 8
+
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
+
+opt.updatetime = 50
+
+opt.hidden = true
+opt.ignorecase = true
+opt.joinspaces = true
+
 opt.cursorline = true
+
 opt.wrap = false
+
 opt.splitbelow = true
 opt.splitright = true
