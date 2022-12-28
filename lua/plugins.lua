@@ -55,6 +55,7 @@ packer.startup(function(use)
 	-- DB
 	use("tpope/vim-dadbod")
 	use("kristijanhusak/vim-dadbod-ui")
+	use("kristijanhusak/vim-dadbod-completion")
 
 	-- Misc
 	use({

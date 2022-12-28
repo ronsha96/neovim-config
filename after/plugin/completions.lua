@@ -53,6 +53,13 @@ cmp.setup({
 	},
 })
 
+-- Apply completions to SQL files
+cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
+	sources = {
+		{ name = "vim-dadbod-completion" },
+	},
+})
+
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ "/", "?" }, {
 	mapping = cmp.mapping.preset.cmdline(),
