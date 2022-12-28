@@ -53,29 +53,13 @@ vim.keymap.set("n", "<leader>t8", "<Cmd>BufferGoto 8<CR>", opts)
 vim.keymap.set("n", "<leader>t9", "<Cmd>BufferGoto 9<CR>", opts)
 vim.keymap.set("n", "<leader>t0", "<Cmd>BufferLast<CR>", opts)
 
--- Pin/unpin buffer
-vim.keymap.set("n", "<c-p>", "<Cmd>BufferPin<CR>", opts)
-
--- Close buffer
+-- Buffer closing & such
 vim.keymap.set("n", "<leader>tc", "<Cmd>BufferClose<CR>", opts)
-
--- Wipeout buffer
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
+vim.keymap.set("n", "<Space>bc", "<Cmd>BufferCloseAllButPinned<CR>", opts)
+vim.keymap.set("n", "<Space>bv", "<Cmd>BufferCloseAllButVisible<CR>", opts)
 
 -- Magic buffer-picking mode
 vim.keymap.set("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
-
--- Sort automatically by...
-vim.keymap.set("n", "<Space>bb", "<Cmd>BufferOrderByBufferNumber<CR>", opts)
-vim.keymap.set("n", "<Space>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
-vim.keymap.set("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
-vim.keymap.set("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
