@@ -18,7 +18,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.isort,
 
 		null_ls.builtins.diagnostics.eslint_d,
-		null_ls.builtins.diagnostics.mypy,
+		-- null_ls.builtins.diagnostics.mypy,
 		-- null_ls.builtins.diagnostics.cspell,
 		-- null_ls.builtins.diagnostics.tsc,
 

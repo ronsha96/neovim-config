@@ -52,6 +52,11 @@ packer.startup(function(use)
 	use("TimUntersberger/neogit")
 	use("sindrets/diffview.nvim")
 
+	-- DB
+	use("tpope/vim-dadbod")
+	use("kristijanhusak/vim-dadbod-ui")
+
+	-- Misc
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",

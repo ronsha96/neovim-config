@@ -1,49 +1,45 @@
-local global = vim.g
-
 -- disable netrw at the very start of your init.lua (strongly advised)
-global.loaded_netrw = 1
-global.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
-local opt = vim.opt
+vim.opt.completeopt = "menuone,noinsert,noselect"
+vim.opt.backspace = "indent,start,eol"
+vim.opt.clipboard = "unnamedplus"
 
-opt.completeopt = "menuone,noinsert,noselect"
-opt.backspace = "indent,start,eol"
-opt.clipboard = "unnamedplus"
+vim.opt.autoread = true
+vim.opt.autoindent = true
 
-opt.autoread = true
-opt.autoindent = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
-opt.number = true
-opt.relativenumber = true
+vim.opt.incsearch = true
+vim.opt.hlsearch = false
 
-opt.incsearch = true
-opt.hlsearch = false
+vim.opt.termguicolors = true
 
-opt.termguicolors = true
+vim.opt.smartcase = true
+vim.opt.smartindent = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = false
 
-opt.smartcase = true
-opt.smartindent = true
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftround = true
-opt.shiftwidth = 4
-opt.expandtab = false
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
-opt.scrolloff = 8
-opt.sidescrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
 
-opt.signcolumn = "yes"
-opt.isfname:append("@-@")
+vim.opt.updatetime = 50
 
-opt.updatetime = 50
+vim.opt.hidden = true
+vim.opt.ignorecase = true
+vim.opt.joinspaces = true
 
-opt.hidden = true
-opt.ignorecase = true
-opt.joinspaces = true
+vim.opt.cursorline = true
 
-opt.cursorline = true
+vim.opt.wrap = false
 
-opt.wrap = false
-
-opt.splitbelow = true
-opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true

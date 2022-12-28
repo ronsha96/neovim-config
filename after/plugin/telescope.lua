@@ -1,5 +1,3 @@
-local map = vim.keymap.set
-
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
@@ -38,14 +36,14 @@ telescope.load_extension("frecency")
 telescope.load_extension("refactoring")
 
 -- Mappings
-map("n", ";f", function()
+vim.keymap.set("n", ";f", function()
 	builtin.find_files({
 		no_ignore = false,
 		hidden = true,
 	})
 end)
 
-map("n", ";g", function()
+vim.keymap.set("n", ";g", function()
 	telescope.extensions.frecency.frecency()
 end)
 
@@ -62,27 +60,27 @@ local function get_visual_selection()
 	end
 end
 
-map({ "n", "v" }, ";r", function()
+vim.keymap.set({ "n", "v" }, ";r", function()
 	local selected_text = get_visual_selection()
 	builtin.live_grep({ default_text = selected_text })
 end)
 
-map("n", "\\\\", function()
+vim.keymap.set("n", "\\\\", function()
 	builtin.buffers()
 end)
 
-map("n", ";t", function()
+vim.keymap.set("n", ";t", function()
 	builtin.colorscheme()
 end)
 
-map("n", ";;", function()
+vim.keymap.set("n", ";;", function()
 	builtin.resume()
 end)
 
-map("n", ";e", function()
+vim.keymap.set("n", ";e", function()
 	builtin.diagnostics()
 end)
 
-map("v", "<leader>rr", function()
+vim.keymap.set("v", "<leader>rr", function()
 	telescope.extensions.refactoring.refactors()
 end)

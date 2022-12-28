@@ -1,4 +1,3 @@
-local map = vim.keymap.set
 local opts = { noremap = true, silent = false }
 
 -- General git tooling
@@ -35,7 +34,7 @@ require("git").setup({
 -- Git conflict
 require("git-conflict").setup()
 
-map("n", "<leader>gl", ":GitConflictListQf")
+vim.keymap.set("n", "<leader>gl", ":GitConflictListQf")
 
 -- Git signs
 local gitsigns = require("gitsigns")
@@ -44,7 +43,7 @@ gitsigns.setup({
 	current_line_blame = true,
 })
 
-map("n", "<leader>gB", function()
+vim.keymap.set("n", "<leader>gB", function()
 	gitsigns.blame_line({ full = true })
 end, opts)
 
@@ -57,12 +56,12 @@ neogit.setup({
 	disable_insert_on_commit = false,
 })
 
-map("n", "<leader>gs", function()
+vim.keymap.set("n", "<leader>gs", function()
 	neogit.open({ kind = "split" })
 end, opts)
 
-map("n", "<leader>ge", ":Neogit cwd=", opts)
+vim.keymap.set("n", "<leader>ge", ":Neogit cwd=", opts)
 
 -- Diffview stuff
-map("n", "<leader>gd", "<CMD>DiffviewOpen<CR>", opts)
-map("n", "<leader>gD", "<CMD>DiffviewClose<CR>", opts)
+vim.keymap.set("n", "<leader>gd", "<CMD>DiffviewOpen<CR>", opts)
+vim.keymap.set("n", "<leader>gD", "<CMD>DiffviewClose<CR>", opts)
