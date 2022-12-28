@@ -16,6 +16,10 @@ null_ls.setup({
 		null_ls.builtins.formatting.taplo,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.isort,
+		null_ls.builtins.formatting.sqlfluff.with({
+			filetypes = { "sql", "mysql", "plsql" },
+			extra_args = { "--dialect", "mysql" },
+		}),
 
 		null_ls.builtins.diagnostics.eslint_d,
 		-- null_ls.builtins.diagnostics.mypy,
