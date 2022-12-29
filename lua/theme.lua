@@ -35,7 +35,12 @@ local function theme_nightfox()
 	-- vim.cmd([[colorscheme terafox]])
 end
 
+local function theme_oceanic_next()
+	vim.cmd([[colorscheme OceanicNext]])
+end
+
 -- setup_gruvbox()
 -- theme_ayu()
 -- theme_no_clown_fiesta()
 theme_nightfox()
+-- theme_oceanic_next()

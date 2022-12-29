@@ -47,11 +47,14 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "buffer" },
+		{ name = "git" },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
 	},
 })
+
+require("cmp_git").setup()
 
 -- Apply completions to SQL files
 cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
