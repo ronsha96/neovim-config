@@ -34,7 +34,7 @@ require("git").setup({
 -- Git conflict
 require("git-conflict").setup()
 
-vim.keymap.set("n", "<leader>gl", ":GitConflictListQf")
+vim.keymap.set("n", "<leader>gl", "<CMD>GitConflictListQf<CR>", opts)
 
 -- Git signs
 local gitsigns = require("gitsigns")
