@@ -34,6 +34,7 @@ telescope.setup({
 telescope.load_extension("smart_history")
 telescope.load_extension("frecency")
 telescope.load_extension("refactoring")
+telescope.load_extension("textcase")
 
 -- Mappings
 vim.keymap.set("n", ";f", function()
@@ -80,6 +81,9 @@ end)
 vim.keymap.set("n", ";e", function()
 	builtin.diagnostics()
 end)
+
+vim.keymap.set("n", ";x", "<CMD>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+vim.keymap.set("v", ";x", "<CMD>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
 vim.keymap.set("v", "<leader>rr", function()
 	telescope.extensions.refactoring.refactors()

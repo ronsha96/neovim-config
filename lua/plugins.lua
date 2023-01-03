@@ -102,6 +102,7 @@ packer.startup(function(use)
 		},
 	})
 	use("ThePrimeagen/harpoon")
+	use("johmsalas/text-case.nvim")
 end)
 
 -- auto compile plugins
