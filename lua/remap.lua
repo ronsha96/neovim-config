@@ -21,6 +21,9 @@ vim.keymap.set("v", "<Down>", "<Nop>", opts)
 vim.keymap.set("v", "<Left>", "<Nop>", opts)
 vim.keymap.set("v", "<Right>", "<Nop>", opts)
 
+-- Unmap <F1>
+vim.keymap.set("n", "<F1>", "<Nop>", opts)
+
 -- Yank all
 vim.keymap.set("n", "<leader>y", 'ggVG"+y', opts)
 
