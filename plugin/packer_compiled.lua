@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -114,6 +119,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
+  },
+  ["dirbuf.nvim"] = {
+    loaded = true,
+    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/dirbuf.nvim",
+    url = "https://github.com/elihunter173/dirbuf.nvim"
   },
   ["fidget.nvim"] = {
     loaded = true,
@@ -295,11 +305,6 @@ _G.packer_plugins = {
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
   },
-  ["vim-commentary"] = {
-    loaded = true,
-    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/vim-commentary",
-    url = "https://github.com/tpope/vim-commentary"
-  },
   ["vim-dadbod"] = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/vim-dadbod",
@@ -329,8 +334,8 @@ try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B
 time([[Config for todo-comments.nvim]], false)
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'leap.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> S <cmd>lua require("packer.load")({'leap.nvim'}, { keys = "S", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'leap.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 

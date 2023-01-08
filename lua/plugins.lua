@@ -69,7 +69,7 @@ packer.startup(function(use)
 	use("nvim-tree/nvim-web-devicons")
 	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
 
-	use("tpope/vim-commentary")
+	use("numToStr/Comment.nvim")
 	use({
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
@@ -92,6 +92,7 @@ packer.startup(function(use)
 		},
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
+	use("elihunter173/dirbuf.nvim")
 	use("mg979/vim-visual-multi")
 	use("derektata/lorem.nvim")
 	use({
