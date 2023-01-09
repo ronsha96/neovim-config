@@ -13,8 +13,8 @@ require("nvim-tree").setup({
 		group_empty = true,
 		full_name = true,
 	},
-	update_to_buf_dir = {
-		enable = false,
+	hijack_directories = {
+		enable = true,
 	},
 })
 
