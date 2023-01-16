@@ -1,5 +1,9 @@
 local null_ls = require("null-ls")
 
+local function eslint_condition(utils)
+	return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.yaml", ".eslintc.yml", ".eslintrc.json" })
+end
+
 null_ls.setup({
 	on_attach = function(client, bufnr)
 		local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -12,10 +16,22 @@ null_ls.setup({
 	end,
 	sources = {
 		-- Javascript / Typescript
-		null_ls.builtins.formatting.prettierd,
-		null_ls.builtins.formatting.rome,
-		null_ls.builtins.diagnostics.eslint_d,
-		null_ls.builtins.code_actions.eslint_d,
+		null_ls.builtins.formatting.prettierd.with({
+			condition = function(utils)
+				return not utils.root_has_file({ "rome.json" })
+			end,
+		}),
+		-- null_ls.builtins.formatting.rome.with({
+		-- 	condition = function(utils)
+		-- 		return utils.root_has_file({ "rome.json" })
+		-- 	end,
+		-- }),
+		null_ls.builtins.diagnostics.eslint_d.with({
+			condition = eslint_condition,
+		}),
+		null_ls.builtins.code_actions.eslint_d.with({
+			condition = eslint_condition,
+		}),
 
 		-- Python
 		null_ls.builtins.formatting.black,
