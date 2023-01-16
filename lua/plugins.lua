@@ -53,6 +53,7 @@ packer.startup(function(use)
 	use({ "akinsho/git-conflict.nvim", tag = "*" })
 	use("TimUntersberger/neogit")
 	use("sindrets/diffview.nvim")
+	use("pwntester/octo.nvim")
 
 	-- DB
 	use("tpope/vim-dadbod")

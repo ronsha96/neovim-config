@@ -55,7 +55,7 @@ local function organize_imports()
 	vim.lsp.buf.execute_command(params)
 end
 
--- TypeScript
+-- Javascript / TypeScript
 lsp.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -70,6 +70,11 @@ lsp.tsserver.setup({
 			description = "Organize Imports",
 		},
 	},
+})
+
+lsp.rome.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 -- CSS
