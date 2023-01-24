@@ -5,6 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.backspace = "indent,start,eol"
 vim.opt.clipboard = "unnamedplus"
+vim.opt.mouse = "a"
 
 vim.opt.autoread = true
 vim.opt.autoindent = true

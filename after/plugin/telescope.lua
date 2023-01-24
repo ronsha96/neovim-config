@@ -28,11 +28,28 @@ telescope.setup({
 			end,
 		},
 	},
+	pickers = {
+		find_files = {
+			theme = "dropdown",
+		},
+		live_grep = {
+			theme = "dropdown",
+		},
+		buffers = {
+			theme = "dropdown",
+		},
+		colorscheme = {
+			theme = "dropdown",
+		},
+		diagnostics = {
+			theme = "dropdown",
+		},
+	},
 })
 
 -- Extensions
+telescope.load_extension("fzy_native")
 telescope.load_extension("smart_history")
-telescope.load_extension("frecency")
 telescope.load_extension("refactoring")
 telescope.load_extension("textcase")
 
@@ -42,10 +59,6 @@ vim.keymap.set("n", ";f", function()
 		no_ignore = false,
 		hidden = true,
 	})
-end)
-
-vim.keymap.set("n", ";g", function()
-	telescope.extensions.frecency.frecency()
 end)
 
 local function get_visual_selection()
@@ -63,23 +76,34 @@ end
 
 vim.keymap.set({ "n", "v" }, ";r", function()
 	local selected_text = get_visual_selection()
-	builtin.live_grep({ default_text = selected_text })
+	builtin.live_grep({
+		default_text = selected_text,
+		theme = dropdown_theme,
+	})
 end)
 
 vim.keymap.set("n", "\\\\", function()
-	builtin.buffers()
+	builtin.buffers({
+		theme = dropdown_theme,
+	})
 end)
 
 vim.keymap.set("n", ";t", function()
-	builtin.colorscheme()
+	builtin.colorscheme({
+		theme = dropdown_theme,
+	})
 end)
 
 vim.keymap.set("n", ";;", function()
-	builtin.resume()
+	builtin.resume({
+		theme = dropdown_theme,
+	})
 end)
 
 vim.keymap.set("n", ";e", function()
-	builtin.diagnostics()
+	builtin.diagnostics({
+		theme = dropdown_theme,
+	})
 end)
 
 vim.keymap.set("n", ";x", "<CMD>TextCaseOpenTelescope<CR>", { desc = "Telescope" })

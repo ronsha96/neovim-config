@@ -28,9 +28,16 @@ local on_attach = function(client, bufnr)
 		vim.lsp.buf.format({ async = true })
 	end, bufopts)
 
-	require("lspsaga").init_lsp_saga({
+	require("lspsaga").setup({
 		server_filetype_map = {
 			typescript = "typescript",
+		},
+		ui = {
+			title = false,
+			border = "rounded",
+			colors = {
+				normal_bg = "NONE",
+			},
 		},
 	})
 
@@ -73,7 +80,16 @@ lsp.tsserver.setup({
 })
 
 lsp.rome.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		-- Only allow formatting if we're inside a workspace with a rome.json file
+		local f = io.open("rome.json", "r")
+		if f ~= nil then
+			io.close(f)
+		else
+			client.server_capabilities.documentFormattingProvider = false
+		end
+		on_attach(client, bufnr)
+	end,
 	capabilities = capabilities,
 })
 
@@ -111,13 +127,3 @@ lsp.pyright.setup({
 		},
 	},
 })
-
--- lsp.jedi_language_server.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })
-
--- lsp.pylsp.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })

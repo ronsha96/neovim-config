@@ -40,12 +40,9 @@ packer.startup(function(use)
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0", requires = { { "nvim-lua/plenary.nvim" } } })
 	use("kkharji/sqlite.lua")
-	use({
-		"nvim-telescope/telescope-frecency.nvim",
-		requires = { "kkharji/sqlite.lua" },
-	})
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use("nvim-telescope/telescope-smart-history.nvim")
+	use("nvim-telescope/telescope-fzy-native.nvim")
 
 	-- Git
 	use("dinhhuy258/git.nvim")
@@ -105,6 +102,7 @@ packer.startup(function(use)
 	})
 	use("ThePrimeagen/harpoon")
 	use("johmsalas/text-case.nvim")
+	use("andymass/vim-matchup")
 end)
 
 -- auto compile plugins

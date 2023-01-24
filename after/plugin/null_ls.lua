@@ -36,6 +36,8 @@ null_ls.setup({
 		-- Python
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.isort,
+
+		-- Sql
 		null_ls.builtins.formatting.sqlfluff.with({
 			filetypes = { "sql", "mysql", "plsql" },
 			extra_args = { "--dialect", "mysql" },
