@@ -103,6 +103,7 @@ packer.startup(function(use)
 	use("ThePrimeagen/harpoon")
 	use("johmsalas/text-case.nvim")
 	use("andymass/vim-matchup")
+	use("akinsho/toggleterm.nvim")
 end)
 
 -- auto compile plugins

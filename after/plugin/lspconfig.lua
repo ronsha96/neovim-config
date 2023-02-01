@@ -33,7 +33,8 @@ local on_attach = function(client, bufnr)
 			typescript = "typescript",
 		},
 		ui = {
-			title = false,
+			theme = "round",
+			title = true,
 			border = "rounded",
 			colors = {
 				normal_bg = "NONE",
@@ -48,7 +49,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", bufopts)
 	vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", bufopts)
 	vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>", bufopts)
-	vim.keymap.set("n", "<leader>ca", "<Cmd>Lspsaga code_action<CR>", bufopts)
+	vim.keymap.set({ "n", "v" }, "<leader>ca", "<Cmd>Lspsaga code_action<CR>", bufopts)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -126,4 +127,10 @@ lsp.pyright.setup({
 			},
 		},
 	},
+})
+
+-- Markdown
+lsp.marksman.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
