@@ -9,6 +9,9 @@ vim.cmd([[packadd packer.nvim]])
 packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
+	-- Dev
+	use("folke/neodev.nvim")
+
 	-- Themes
 	use("ellisonleao/gruvbox.nvim")
 	use("Shatur/neovim-ayu")
@@ -36,7 +39,20 @@ packer.startup(function(use)
 	use("hrsh7th/nvim-cmp")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("j-hui/fidget.nvim")
-	use("klen/nvim-test")
+
+	-- Run/Test/Debug
+	use("stevearc/overseer.nvim")
+	use({
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-neotest/neotest-python",
+			"nvim-neotest/neotest-plenary",
+			"nvim-neotest/neotest-vim-test",
+		},
+	})
+
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0", requires = { { "nvim-lua/plenary.nvim" } } })
 	use("kkharji/sqlite.lua")
