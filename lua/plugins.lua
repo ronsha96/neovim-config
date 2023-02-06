@@ -36,7 +36,7 @@ packer.startup(function(use)
 	use("hrsh7th/nvim-cmp")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("j-hui/fidget.nvim")
-
+	use("klen/nvim-test")
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0", requires = { { "nvim-lua/plenary.nvim" } } })
 	use("kkharji/sqlite.lua")
