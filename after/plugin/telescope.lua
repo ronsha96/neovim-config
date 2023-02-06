@@ -29,21 +29,21 @@ telescope.setup({
 		},
 	},
 	pickers = {
-		find_files = {
-			theme = "dropdown",
-		},
-		live_grep = {
-			theme = "dropdown",
-		},
-		buffers = {
-			theme = "dropdown",
-		},
-		colorscheme = {
-			theme = "dropdown",
-		},
-		diagnostics = {
-			theme = "dropdown",
-		},
+		-- find_files = {
+		-- 	theme = "dropdown",
+		-- },
+		-- live_grep = {
+		-- 	theme = "dropdown",
+		-- },
+		-- buffers = {
+		-- 	theme = "dropdown",
+		-- },
+		-- colorscheme = {
+		-- 	theme = "dropdown",
+		-- },
+		-- diagnostics = {
+		-- 	theme = "dropdown",
+		-- },
 	},
 })
 
@@ -55,6 +55,13 @@ telescope.load_extension("textcase")
 
 -- Mappings
 vim.keymap.set("n", ";f", function()
+	builtin.git_files({
+		no_ignore = false,
+		hidden = true,
+	})
+end)
+
+vim.keymap.set("n", ";d", function()
 	builtin.find_files({
 		no_ignore = false,
 		hidden = true,
