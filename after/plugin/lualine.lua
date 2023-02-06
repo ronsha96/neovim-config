@@ -2,8 +2,8 @@ require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = "nordfox",
-		section_separators = { left = "", right = "" },
-		component_separators = { left = "", right = "" },
+		section_separators = { left = " ", right = " " },
+		component_separators = { left = "|", right = "|" },
 		disabled_filetypes = {},
 	},
 	sections = {
@@ -23,6 +23,7 @@ require("lualine").setup({
 				sources = { "nvim_diagnostic" },
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			},
+			-- "overseer",
 			"encoding",
 			"filetype",
 		},

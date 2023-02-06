@@ -12,6 +12,11 @@ packer.startup(function(use)
 	-- Dev
 	use("folke/neodev.nvim")
 
+	-- Looks
+	use("stevearc/dressing.nvim")
+	use("rcarriga/nvim-notify")
+	use("lukas-reineke/indent-blankline.nvim")
+
 	-- Themes
 	use("ellisonleao/gruvbox.nvim")
 	use("Shatur/neovim-ayu")
@@ -120,7 +125,6 @@ packer.startup(function(use)
 	use("johmsalas/text-case.nvim")
 	use("andymass/vim-matchup")
 	use("akinsho/toggleterm.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
 end)
 
 -- auto compile plugins

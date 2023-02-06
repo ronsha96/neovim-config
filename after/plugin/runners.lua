@@ -1,5 +1,34 @@
+local opts = { noremap = true }
+
 -- Run
-require("overseer").setup({})
+local overseer = require("overseer")
+
+overseer.setup({
+	-- strategy = "toggleterm",
+	task_list = {
+		default_detail = 2,
+		min_width = { 60, 0.15 },
+		direction = "right",
+	},
+})
+
+overseer.register_template({
+	name = "Python: Run main.py",
+	builder = function(_)
+		return {
+			cmd = { "./venv/bin/python" },
+			args = { "main.py" },
+		}
+	end,
+	desc = "Runs the python project inside a virtual environment",
+	priority = 0,
+	condition = {
+		dir = { "/Users/ronsha/dev/pymobiengine" },
+	},
+})
+
+vim.keymap.set("n", "'xx", "<Cmd>OverseerRun<CR>", opts)
+vim.keymap.set("n", "'x'", "<Cmd>OverseerToggle<CR>", opts)
 
 -- Test
 local neotest = require("neotest")
@@ -14,11 +43,12 @@ neotest.setup({
 			ignore_file_types = { "python", "vim", "lua" },
 		}),
 	},
+	consumers = {
+		overseer = require("neotest.consumers.overseer"),
+	},
 })
 
 -- Run nearest test
-local opts = { noremap = true }
-
 vim.keymap.set("n", "'tt", function()
 	print("Test: Running nearest...")
 	neotest.run.run()
