@@ -104,6 +104,7 @@ packer.startup(function(use)
 	use("johmsalas/text-case.nvim")
 	use("andymass/vim-matchup")
 	use("akinsho/toggleterm.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
 end)
 
 -- auto compile plugins

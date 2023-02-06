@@ -68,53 +68,47 @@ vim.keymap.set("n", ";d", function()
 	})
 end)
 
-local function get_visual_selection()
-	vim.cmd('noau normal! "vy"')
-	local text = vim.fn.getreg("v")
-	vim.fn.setreg("v", {})
-
-	text = string.gsub(text, "\n", "")
-	if #text > 0 then
-		return text
-	else
-		return ""
-	end
-end
-
 vim.keymap.set({ "n", "v" }, ";r", function()
+	local function get_visual_selection()
+		vim.cmd('noau normal! "vy"')
+		local text = vim.fn.getreg("v")
+		vim.fn.setreg("v", {})
+
+		text = string.gsub(text, "\n", "")
+		if #text > 0 then
+			return text
+		else
+			return ""
+		end
+	end
+
 	local selected_text = get_visual_selection()
 	builtin.live_grep({
 		default_text = selected_text,
-		theme = dropdown_theme,
 	})
 end)
 
-vim.keymap.set("n", "\\\\", function()
-	builtin.buffers({
-		theme = dropdown_theme,
-	})
+vim.keymap.set("n", ";w", function()
+	builtin.grep_string({})
+end)
+
+vim.keymap.set("n", ";c", function()
+	builtin.commands({})
 end)
 
 vim.keymap.set("n", ";t", function()
-	builtin.colorscheme({
-		theme = dropdown_theme,
-	})
+	builtin.colorscheme({})
 end)
 
 vim.keymap.set("n", ";;", function()
-	builtin.resume({
-		theme = dropdown_theme,
-	})
+	builtin.resume({})
 end)
 
 vim.keymap.set("n", ";e", function()
-	builtin.diagnostics({
-		theme = dropdown_theme,
-	})
+	builtin.diagnostics({})
 end)
 
-vim.keymap.set("n", ";x", "<CMD>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
-vim.keymap.set("v", ";x", "<CMD>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+vim.keymap.set({ "n", "v" }, ";x", "<CMD>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
 vim.keymap.set("v", "<leader>rr", function()
 	telescope.extensions.refactoring.refactors()
