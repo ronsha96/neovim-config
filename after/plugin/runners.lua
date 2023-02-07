@@ -13,21 +13,53 @@ overseer.setup({
 })
 
 overseer.register_template({
+	name = "Python: Run current module",
+	builder = function(_)
+		local filename = vim.fn.expand("%")
+		local filename_without_ext = filename:gsub("%.py", ""):gsub("/", ".")
+		return {
+			cmd = { "python3" },
+			args = { "-m", filename_without_ext },
+			env = {
+				PYTHONUNBUFFERED = 1,
+			},
+		}
+	end,
+	priority = 0,
+	condition = {
+		filetype = { "py", "python" },
+	},
+})
+
+overseer.register_template({
 	name = "Python: Run main.py",
 	builder = function(_)
 		return {
 			cmd = { "./venv/bin/python" },
 			args = { "main.py" },
+			env = {
+				PYTHONUNBUFFERED = 1,
+			},
 		}
 	end,
 	desc = "Runs the python project inside a virtual environment",
-	priority = 0,
+	priority = 1,
 	condition = {
 		dir = { "/Users/ronsha/dev/pymobiengine" },
 	},
 })
 
+vim.api.nvim_create_user_command("OverseerRestartLast", function()
+	local tasks = overseer.list_tasks({ recent_first = true })
+	if vim.tbl_isempty(tasks) then
+		vim.notify("No tasks found", vim.log.levels.WARN)
+	else
+		overseer.run_action(tasks[1], "restart")
+	end
+end, {})
+
 vim.keymap.set("n", "'xx", "<Cmd>OverseerRun<CR>", opts)
+vim.keymap.set("n", "'xr", "<Cmd>OverseerRestartLast<CR>", opts)
 vim.keymap.set("n", "'x'", "<Cmd>OverseerToggle<CR>", opts)
 
 -- Test
