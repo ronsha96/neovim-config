@@ -13,25 +13,6 @@ overseer.setup({
 })
 
 overseer.register_template({
-	name = "Python: Run current module",
-	builder = function(_)
-		local filename = vim.fn.expand("%")
-		local filename_without_ext = filename:gsub("%.py", ""):gsub("/", ".")
-		return {
-			cmd = { "python3" },
-			args = { "-m", filename_without_ext },
-			env = {
-				PYTHONUNBUFFERED = 1,
-			},
-		}
-	end,
-	priority = 0,
-	condition = {
-		filetype = { "py", "python" },
-	},
-})
-
-overseer.register_template({
 	name = "Python: Run main.py",
 	builder = function(_)
 		return {
@@ -46,6 +27,40 @@ overseer.register_template({
 	priority = 1,
 	condition = {
 		dir = { "/Users/ronsha/dev/pymobiengine" },
+	},
+})
+
+overseer.register_template({
+	name = "Python: Run current module",
+	builder = function(_)
+		return {
+			cmd = { "python3" },
+			args = { "-m", vim.fn.expand("%"):gsub("%.py", ""):gsub("/", ".") },
+			env = {
+				PYTHONUNBUFFERED = 1,
+			},
+		}
+	end,
+	priority = 0,
+	condition = {
+		filetype = { "py", "python" },
+	},
+})
+
+overseer.register_template({
+	name = "Python: Run current file",
+	builder = function(_)
+		return {
+			cmd = { "python3" },
+			args = { vim.fn.expand("%") },
+			env = {
+				PYTHONUNBUFFERED = 1,
+			},
+		}
+	end,
+	priority = 0,
+	condition = {
+		filetype = { "py", "python" },
 	},
 })
 
