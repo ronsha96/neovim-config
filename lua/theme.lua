@@ -22,10 +22,6 @@ local function theme_ayu()
 	ayu.colorscheme()
 end
 
-local function theme_no_clown_fiesta()
-	vim.cmd([[colorscheme no-clown-fiesta]])
-end
-
 local function theme_nightfox()
 	require("nightfox").setup()
 
@@ -43,9 +39,13 @@ local function theme_catppuccin()
 	vim.cmd([[colorscheme catppuccin-mocha]])
 end
 
+local function theme_dracula()
+	vim.cmd([[colorscheme dracula]])
+end
+
 -- setup_gruvbox()
-theme_ayu()
--- theme_no_clown_fiesta()
+-- theme_ayu()
 -- theme_nightfox()
 -- theme_tokyonight()
 -- theme_catppuccin()
+theme_dracula()

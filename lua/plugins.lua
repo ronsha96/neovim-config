@@ -23,6 +23,7 @@ packer.startup(function(use)
 	use("EdenEast/nightfox.nvim")
 	use("folke/tokyonight.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("Mofiqul/dracula.nvim")
 
 	-- Lualine
 	use("arkav/lualine-lsp-progress")
