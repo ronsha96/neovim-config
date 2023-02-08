@@ -93,6 +93,12 @@ neotest.setup({
 	consumers = {
 		overseer = require("neotest.consumers.overseer"),
 	},
+	icons = {
+		passed = "",
+		running = "",
+		failed = "",
+		unknown = "",
+	},
 })
 
 -- Run nearest test

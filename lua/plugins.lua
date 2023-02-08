@@ -20,9 +20,9 @@ packer.startup(function(use)
 	-- Themes
 	use("ellisonleao/gruvbox.nvim")
 	use("Shatur/neovim-ayu")
-	use("aktersnurra/no-clown-fiesta.nvim")
 	use("EdenEast/nightfox.nvim")
-	use("mhartington/oceanic-next")
+	use("folke/tokyonight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Lualine
 	use("arkav/lualine-lsp-progress")

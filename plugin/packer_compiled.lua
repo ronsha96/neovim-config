@@ -90,6 +90,11 @@ _G.packer_plugins = {
     url = "https://github.com/romgrk/barbar.nvim",
     wants = { "nvim-web-devicons" }
   },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -239,11 +244,6 @@ _G.packer_plugins = {
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
   },
-  ["no-clown-fiesta.nvim"] = {
-    loaded = true,
-    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/no-clown-fiesta.nvim",
-    url = "https://github.com/aktersnurra/no-clown-fiesta.nvim"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -288,11 +288,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
-  },
-  ["oceanic-next"] = {
-    loaded = true,
-    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/oceanic-next",
-    url = "https://github.com/mhartington/oceanic-next"
   },
   ["octo.nvim"] = {
     loaded = true,
@@ -359,6 +354,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/ronsha/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-dadbod"] = {
     loaded = true,
