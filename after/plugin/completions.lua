@@ -1,6 +1,12 @@
+local luasnip = require("luasnip")
+
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/typescript" } })
+
+luasnip.filetype_extend("all", { "_" })
+
 local cmp = require("cmp")
 local lspkind = require("lspkind")
-local luasnip = require("luasnip")
 
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -46,11 +52,16 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "path" },
 		{ name = "buffer" },
 		{ name = "git" },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
+	},
+	window = {
+		documentation = cmp.config.window.bordered(),
 	},
 })
 

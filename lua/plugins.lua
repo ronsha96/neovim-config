@@ -35,16 +35,24 @@ packer.startup(function(use)
 	-- Lsp
 	use("neovim/nvim-lspconfig")
 	use("onsails/lspkind-nvim")
-	use({ "L3MON4D3/LuaSnip", tag = "v1.*" })
-	use("glepnir/lspsaga.nvim")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("petertriho/cmp-git")
-	use("hrsh7th/nvim-cmp")
+	use({ "glepnir/lspsaga.nvim", branch = "main" })
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("j-hui/fidget.nvim")
+
+	-- Completion
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-nvim-lsp")
+	use({
+		"L3MON4D3/LuaSnip",
+		tag = "v1.*",
+		run = "make install_jsregexp",
+		requires = { "rafamadriz/friendly-snippets" },
+	})
+	use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
+	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
+	use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
+	use({ "petertriho/cmp-git", after = "nvim-cmp" })
 
 	-- Run/Test/Debug
 	use("stevearc/overseer.nvim")
