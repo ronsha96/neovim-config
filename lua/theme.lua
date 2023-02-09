@@ -44,8 +44,8 @@ local function theme_dracula()
 end
 
 -- setup_gruvbox()
--- theme_ayu()
+theme_ayu()
 -- theme_nightfox()
 -- theme_tokyonight()
 -- theme_catppuccin()
-theme_dracula()
+-- theme_dracula()

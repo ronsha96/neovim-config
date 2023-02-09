@@ -1,9 +1,7 @@
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "dracula-nvim",
-		section_separators = { left = " ", right = " " },
-		component_separators = { left = "|", right = "|" },
+		theme = "ayu",
 		disabled_filetypes = {},
 	},
 	sections = {
