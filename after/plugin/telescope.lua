@@ -29,21 +29,30 @@ telescope.setup({
 		},
 	},
 	pickers = {
-		-- find_files = {
-		-- 	theme = "dropdown",
-		-- },
-		-- live_grep = {
-		-- 	theme = "dropdown",
-		-- },
-		-- buffers = {
-		-- 	theme = "dropdown",
-		-- },
-		-- colorscheme = {
-		-- 	theme = "dropdown",
-		-- },
-		-- diagnostics = {
-		-- 	theme = "dropdown",
-		-- },
+		find_files = {
+			theme = "dropdown",
+		},
+		git_files = {
+			theme = "dropdown",
+		},
+		live_grep = {
+			theme = "dropdown",
+		},
+		grep_string = {
+			theme = "dropdown",
+		},
+		commands = {
+			theme = "dropdown",
+		},
+		buffers = {
+			theme = "dropdown",
+		},
+		colorscheme = {
+			theme = "dropdown",
+		},
+		diagnostics = {
+			theme = "dropdown",
+		},
 	},
 })
 
