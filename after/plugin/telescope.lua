@@ -103,6 +103,7 @@ telescope.load_extension("fzy_native")
 telescope.load_extension("smart_history")
 telescope.load_extension("refactoring")
 telescope.load_extension("textcase")
+telescope.load_extension("ui-select")
 
 -- Mappings
 vim.keymap.set("n", ";f", function()

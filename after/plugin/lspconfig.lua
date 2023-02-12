@@ -49,8 +49,16 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", bufopts)
 	vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", bufopts)
 	vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>", bufopts)
-	vim.keymap.set({ "n", "v" }, "<leader>ca", "<Cmd>Lspsaga code_action<CR>", bufopts)
+	vim.keymap.set({ "n", "v" }, "ga", "<Cmd>Lspsaga code_action<CR>", bufopts)
 end
+
+-- Underline diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+	virtual_text = true,
+	signs = true,
+	update_in_insert = false,
+	underline = true,
+})
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -102,7 +110,7 @@ lsp.cssls.setup({
 })
 
 -- Lua
-lsp.sumneko_lua.setup({
+lsp.lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {

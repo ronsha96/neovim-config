@@ -73,6 +73,7 @@ packer.startup(function(use)
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use("nvim-telescope/telescope-smart-history.nvim")
 	use("nvim-telescope/telescope-fzy-native.nvim")
+	use("nvim-telescope/telescope-ui-select.nvim")
 
 	-- Git
 	use("dinhhuy258/git.nvim")
