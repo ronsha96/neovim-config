@@ -11,6 +11,14 @@ packer.startup(function(use)
 
 	-- Dev
 	use("folke/neodev.nvim")
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({})
+		end,
+	})
 
 	-- Looks
 	use("stevearc/dressing.nvim")
@@ -64,6 +72,20 @@ packer.startup(function(use)
 			"nvim-neotest/neotest-python",
 			"nvim-neotest/neotest-plenary",
 			"nvim-neotest/neotest-vim-test",
+		},
+	})
+	use({
+		"mfussenegger/nvim-dap",
+		opt = true,
+		event = "BufReadPre",
+		module = { "dap" },
+		wants = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-python", "which-key.nvim" },
+		requires = {
+			"theHamsta/nvim-dap-virtual-text",
+			"rcarriga/nvim-dap-ui",
+			"mfussenegger/nvim-dap-python",
+			"nvim-telescope/telescope-dap.nvim",
+			{ "jbyuki/one-small-step-for-vimkind", module = "osv" },
 		},
 	})
 
