@@ -1,7 +1,7 @@
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "ayu",
+		theme = "nordfox",
 		disabled_filetypes = {},
 	},
 	sections = {
