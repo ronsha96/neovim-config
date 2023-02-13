@@ -22,7 +22,7 @@ local function theme_ayu()
 	ayu.colorscheme()
 end
 
-local function theme_nightfox()
+local function theme_nordfox()
 	require("nightfox").setup()
 
 	-- vim.cmd([[colorscheme nightfox]])
@@ -44,8 +44,8 @@ local function theme_dracula()
 end
 
 -- setup_gruvbox()
-theme_ayu()
--- theme_nightfox()
+-- theme_ayu()
+theme_nordfox()
 -- theme_tokyonight()
 -- theme_catppuccin()
 -- theme_dracula()
