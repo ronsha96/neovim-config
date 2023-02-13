@@ -61,6 +61,7 @@ vim.keymap.set("n", "<leader>tc", "<Cmd>BufferClose<CR>", opts)
 vim.keymap.set("n", "<leader>bx", "<Cmd>BufferClose<CR>", opts)
 vim.keymap.set("n", "<leader>bc", "<Cmd>BufferCloseAllButPinned<CR>", opts)
 vim.keymap.set("n", "<leader>bv", "<Cmd>BufferCloseAllButVisible<CR>", opts)
+vim.keymap.set("n", "<leader>bp", "<Cmd>BufferPin<CR>", opts)
 
 -- Magic buffer-picking mode
 vim.keymap.set("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
