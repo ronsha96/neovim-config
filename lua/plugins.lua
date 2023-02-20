@@ -26,11 +26,6 @@ packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use({
 		"folke/noice.nvim",
-		config = function()
-			require("noice").setup({
-				-- add any options here
-			})
-		end,
 		requires = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
