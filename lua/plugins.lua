@@ -32,6 +32,8 @@ packer.startup(function(use)
 	use("folke/tokyonight.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("Mofiqul/dracula.nvim")
+	use("navarasu/onedark.nvim")
+	use({ "embark-theme/vim", as = "embark" })
 
 	-- Lualine
 	use("arkav/lualine-lsp-progress")
