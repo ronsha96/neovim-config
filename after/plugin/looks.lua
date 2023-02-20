@@ -1,5 +1,5 @@
-require("dressing").setup()
-
+-- require("dressing").setup()
+--
 require("notify").setup({
 	fps = 60,
 	render = "compact",
@@ -7,7 +7,9 @@ require("notify").setup({
 	top_down = true,
 	timeout = 3000,
 })
+--
+-- vim.notify = require("notify")
 
-vim.notify = require("notify")
+require("noice").setup()
 
 require("indent_blankline").setup()

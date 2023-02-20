@@ -6,7 +6,7 @@ local function theme_gruvbox()
 end
 
 local function theme_ayu()
-	local mirage = false
+	local mirage = true
 	local colors = require("ayu.colors")
 	colors.generate(mirage)
 
@@ -24,15 +24,11 @@ end
 
 local function theme_nordfox()
 	require("nightfox").setup()
-
-	-- vim.cmd([[colorscheme nightfox]])
-	-- vim.cmd([[colorscheme duskfox]])
 	vim.cmd([[colorscheme nordfox]])
-	-- vim.cmd([[colorscheme terafox]])
 end
 
 local function theme_tokyonight()
-	vim.cmd([[colorscheme tokyonight-night]])
+	vim.cmd([[colorscheme tokyonight-storm]])
 end
 
 local function theme_catppuccin()
@@ -56,10 +52,10 @@ local function theme_embark()
 end
 
 -- setup_gruvbox()
--- theme_ayu()
+theme_ayu()
 -- theme_nordfox()
 -- theme_tokyonight()
 -- theme_catppuccin()
 -- theme_dracula()
-theme_onedark()
+-- theme_onedark()
 -- theme_embark()

@@ -24,6 +24,18 @@ packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("rcarriga/nvim-notify")
 	use("lukas-reineke/indent-blankline.nvim")
+	use({
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup({
+				-- add any options here
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	})
 
 	-- Themes
 	use("ellisonleao/gruvbox.nvim")
