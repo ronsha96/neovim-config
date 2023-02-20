@@ -28,7 +28,14 @@ local function theme_nordfox()
 end
 
 local function theme_tokyonight()
-	vim.cmd([[colorscheme tokyonight-storm]])
+	require("tokyonight").setup({
+		style = "storm",
+		styles = {
+			comments = { italic = false },
+			keywords = { italic = false },
+		},
+	})
+	vim.cmd([[colorscheme tokyonight]])
 end
 
 local function theme_catppuccin()
@@ -52,9 +59,9 @@ local function theme_embark()
 end
 
 -- setup_gruvbox()
-theme_ayu()
+-- theme_ayu()
 -- theme_nordfox()
--- theme_tokyonight()
+theme_tokyonight()
 -- theme_catppuccin()
 -- theme_dracula()
 -- theme_onedark()
