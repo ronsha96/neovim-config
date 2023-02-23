@@ -1,7 +1,7 @@
 -- require("dressing").setup()
 --
 require("notify").setup({
-	fps = 60,
+	fps = 30,
 	render = "compact",
 	stages = "fade_in_slide_out",
 	top_down = true,
