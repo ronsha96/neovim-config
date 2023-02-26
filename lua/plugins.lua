@@ -40,7 +40,10 @@ packer.startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("Mofiqul/dracula.nvim")
 	use("navarasu/onedark.nvim")
-	use({ "embark-theme/vim", as = "embark" })
+	use("AlexvZyl/nordic.nvim")
+	use({ "ramojus/mellifluous.nvim", requires = { "rktjmp/lush.nvim" } })
+	use("sainnhe/sonokai")
+	use("arturgoms/moonbow.nvim")
 
 	-- Lualine
 	use("arkav/lualine-lsp-progress")
@@ -166,6 +169,7 @@ packer.startup(function(use)
 	use("johmsalas/text-case.nvim")
 	use("andymass/vim-matchup")
 	use("akinsho/toggleterm.nvim")
+	use("romainl/vim-cool")
 end)
 
 -- auto compile plugins
