@@ -154,9 +154,6 @@ packer.startup(function(use)
 	use("romainl/vim-cool")
 	use({
 		"goolord/alpha-nvim",
-		config = function()
-			require("alpha").setup(require("alpha.themes.startify").config)
-		end,
 		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 	use("lukas-reineke/indent-blankline.nvim")
