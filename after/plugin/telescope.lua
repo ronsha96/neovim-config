@@ -152,6 +152,14 @@ vim.keymap.set("n", ";t", function()
 	builtin.colorscheme({})
 end)
 
+vim.keymap.set("n", ";o", function()
+	builtin.oldfiles({})
+end)
+
+vim.keymap.set("n", ";p", function()
+	telescope.extensions.project.project({ display_type = "full" })
+end)
+
 vim.keymap.set("n", ";;", function()
 	builtin.resume({})
 end)

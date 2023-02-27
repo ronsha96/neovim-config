@@ -4,7 +4,6 @@ local if_nil = vim.F.if_nil
 local leader = "SPC"
 
 ---@diagnostic disable-next-line: unused-local
----@diagnostic disable-next-line: unused-local
 local header_comic_blush = {
 	[[⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕]],
 	[[⢐⢕⢕⢕⢕⢕⣕⢕⢕⠕⠁⢕⢕⢕⢕⢕⢕⢕⢕⠅⡄⢕⢕⢕⢕⢕⢕⢕⢕⢕]],
@@ -109,7 +108,7 @@ local header_kanagawa_light = {
 
 local header = {
 	type = "text",
-	val = header_comic_blush,
+	val = header_pikachu,
 	opts = {
 		position = "center",
 		hl = "Type",
