@@ -55,7 +55,6 @@ neogit.setup({
 	integrations = { diffview = true },
 	disable_insert_on_commit = false,
 	disable_commit_confirmation = true,
-	disable_builtin_notifications = true, -- Required for nvim-notify
 })
 
 vim.keymap.set("n", "<leader>gs", function()

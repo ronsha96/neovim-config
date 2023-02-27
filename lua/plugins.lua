@@ -20,30 +20,11 @@ packer.startup(function(use)
 		end,
 	})
 
-	-- Looks
-	use("stevearc/dressing.nvim")
-	use("rcarriga/nvim-notify")
-	use("lukas-reineke/indent-blankline.nvim")
-	use({
-		"folke/noice.nvim",
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	})
-
 	-- Themes
 	use("ellisonleao/gruvbox.nvim")
 	use("Shatur/neovim-ayu")
 	use("EdenEast/nightfox.nvim")
 	use("folke/tokyonight.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("Mofiqul/dracula.nvim")
-	use("navarasu/onedark.nvim")
-	use("AlexvZyl/nordic.nvim")
-	use({ "ramojus/mellifluous.nvim", requires = { "rktjmp/lush.nvim" } })
-	use("sainnhe/sonokai")
-	use("arturgoms/moonbow.nvim")
 
 	-- Lualine
 	use("arkav/lualine-lsp-progress")
@@ -170,6 +151,45 @@ packer.startup(function(use)
 	use("andymass/vim-matchup")
 	use("akinsho/toggleterm.nvim")
 	use("romainl/vim-cool")
+	use({
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup({
+				theme = "hyper",
+				config = {
+					week_header = {
+						enable = true,
+					},
+					shortcut = {
+						{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
+						{
+							icon = " ",
+							icon_hl = "@variable",
+							desc = "Files",
+							group = "Label",
+							action = "Telescope find_files",
+							key = "f",
+						},
+						{
+							desc = " Apps",
+							group = "DiagnosticHint",
+							action = "Telescope app",
+							key = "a",
+						},
+						{
+							desc = " dotfiles",
+							group = "Number",
+							action = "Telescope dotfiles",
+							key = "d",
+						},
+					},
+				},
+			})
+		end,
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
+	use("lukas-reineke/indent-blankline.nvim")
 end)
 
 -- auto compile plugins
