@@ -25,6 +25,7 @@ packer.startup(function(use)
 	use("Shatur/neovim-ayu")
 	use("EdenEast/nightfox.nvim")
 	use("folke/tokyonight.nvim")
+	use("rebelot/kanagawa.nvim")
 
 	-- Lualine
 	use("arkav/lualine-lsp-progress")
@@ -152,44 +153,14 @@ packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 	use("romainl/vim-cool")
 	use({
-		"glepnir/dashboard-nvim",
-		event = "VimEnter",
+		"goolord/alpha-nvim",
 		config = function()
-			require("dashboard").setup({
-				theme = "hyper",
-				config = {
-					week_header = {
-						enable = true,
-					},
-					shortcut = {
-						{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
-						{
-							icon = " ",
-							icon_hl = "@variable",
-							desc = "Files",
-							group = "Label",
-							action = "Telescope find_files",
-							key = "f",
-						},
-						{
-							desc = " Apps",
-							group = "DiagnosticHint",
-							action = "Telescope app",
-							key = "a",
-						},
-						{
-							desc = " dotfiles",
-							group = "Number",
-							action = "Telescope dotfiles",
-							key = "d",
-						},
-					},
-				},
-			})
+			require("alpha").setup(require("alpha.themes.startify").config)
 		end,
 		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 	use("lukas-reineke/indent-blankline.nvim")
+	use("lewis6991/impatient.nvim")
 end)
 
 -- auto compile plugins
