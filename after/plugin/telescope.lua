@@ -15,10 +15,10 @@ telescope.setup({
 			n = {
 				["q"] = actions.close,
 			},
-			-- Mapping <Esc> to quit in insert mode
-			i = {
-				["<esc>"] = actions.close,
-			},
+			-- -- Mapping <Esc> to quit in insert mode
+			-- i = {
+			-- 	["<esc>"] = actions.close,
+			-- },
 		},
 		history = {
 			path = "~/.local/share/nvim/databases/telescope_history.sqlite3",

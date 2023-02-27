@@ -1,3 +1,5 @@
+local whichkey = require("which-key")
+
 local opts = { noremap = true }
 
 -- Run
@@ -101,34 +103,94 @@ neotest.setup({
 	},
 })
 
+whichkey.register({
+	t = {
+		name = "Test",
+		t = {
+			function()
+				print("Test: Running nearest...")
+				neotest.run.run()
+			end,
+			"Run nearest",
+		},
+		f = {
+			function()
+				print("Test: Running file...")
+				neotest.run.run(vim.fn.expand("%"))
+			end,
+			"Run current file",
+		},
+		d = {
+			function()
+				print("Test: Debugging nearest...")
+				neotest.run.run({ strategy = "dap" })
+			end,
+			"Debug nearest",
+		},
+		x = {
+			function()
+				print("Test: Stopping nearest...")
+				neotest.run.stop()
+			end,
+			"Stop nearest",
+		},
+		a = {
+			function()
+				print("Test: Attaching to nearest...")
+				neotest.run.attach()
+			end,
+			"Attach to nearest",
+		},
+		o = {
+			function()
+				neotest.summary.toggle()
+			end,
+			"Open summary",
+		},
+		p = {
+			function()
+				neotest.output_panel.toggle()
+			end,
+			"Open output panel",
+		},
+	},
+}, {
+	mode = "n",
+	prefix = "'",
+	buffer = nil,
+	silent = true,
+	noremap = true,
+	nowait = false,
+})
+
 -- Run nearest test
-vim.keymap.set("n", "'tt", function()
-	print("Test: Running nearest...")
-	neotest.run.run()
-end, opts)
+-- vim.keymap.set("n", "'tt", function()
+-- 	print("Test: Running nearest...")
+-- 	neotest.run.run()
+-- end, opts)
 
-vim.keymap.set("n", "'tf", function()
-	print("Test: Running file...")
-	neotest.run.run(vim.fn.expand("%"))
-end, opts)
+-- vim.keymap.set("n", "'tf", function()
+-- 	print("Test: Running file...")
+-- 	neotest.run.run(vim.fn.expand("%"))
+-- end, opts)
 
-vim.keymap.set("n", "'td", function()
-	print("Test: Debugging nearest...")
-	neotest.run.run({ strategy = "dap" })
-end, opts)
+-- vim.keymap.set("n", "'td", function()
+-- 	print("Test: Debugging nearest...")
+-- 	neotest.run.run({ strategy = "dap" })
+-- end, opts)
 
-vim.keymap.set("n", "'tx", function()
-	print("Test: Stopping nearest...")
-	neotest.run.stop()
-end, opts)
+-- vim.keymap.set("n", "'tx", function()
+-- 	print("Test: Stopping nearest...")
+-- 	neotest.run.stop()
+-- end, opts)
 
-vim.keymap.set("n", "'ta", function()
-	print("Test: Attaching to nearest...")
-	neotest.run.attach()
-end, opts)
+-- vim.keymap.set("n", "'ta", function()
+-- 	print("Test: Attaching to nearest...")
+-- 	neotest.run.attach()
+-- end, opts)
 
-vim.keymap.set("n", "'to", neotest.output_panel.toggle, opts)
-vim.keymap.set("n", "'ts", neotest.summary.toggle, opts)
+-- vim.keymap.set("n", "'to", neotest.output_panel.toggle, opts)
+-- vim.keymap.set("n", "'ts", neotest.summary.toggle, opts)
 
 -- Debug
 
@@ -188,7 +250,6 @@ table.insert(dap.configurations.python, {
 })
 
 -- Debug: Mappings
-local whichkey = require("which-key")
 
 whichkey.register({
 	d = {
