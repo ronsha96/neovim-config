@@ -40,6 +40,8 @@ packer.startup(function(use)
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("j-hui/fidget.nvim")
+	use("metakirby5/codi.vim")
+	use("github/copilot.vim")
 
 	-- Completion
 	use("hrsh7th/nvim-cmp")
