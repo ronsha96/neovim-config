@@ -56,6 +56,7 @@ cmp.setup({
 		["<S-Tab>"] = previous_item,
 	}),
 	sources = cmp.config.sources({
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "path" },
@@ -66,7 +67,11 @@ cmp.setup({
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
 	},
 	window = {
+		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
+	},
+	experimental = {
+		ghost_text = true,
 	},
 })
 

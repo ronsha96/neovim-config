@@ -41,7 +41,6 @@ packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("j-hui/fidget.nvim")
 	use("metakirby5/codi.vim")
-	use("github/copilot.vim")
 
 	-- Completion
 	use("hrsh7th/nvim-cmp")
@@ -57,6 +56,24 @@ packer.startup(function(use)
 	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
 	use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
 	use({ "petertriho/cmp-git", after = "nvim-cmp" })
+	use({
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = { enabled = false },
+				panel = { enabled = false },
+			})
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	})
 
 	-- Run/Test/Debug
 	use("stevearc/overseer.nvim")
